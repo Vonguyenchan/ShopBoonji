@@ -839,3 +839,52 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+/* Giao diện dành riêng cho điện thoại */
+@media screen and (max-width: 768px) {
+    /* 1. Thu nhỏ tiêu đề Shop */
+    .shop-name {
+        font-size: 40px !important; /* Giảm cỡ chữ xuống */
+    }
+    .testphu {
+        font-size: 16px !important;
+    }
+
+    /* 2. Chỉnh lại danh sách sản phẩm/vòng quay thành 1 hoặc 2 cột */
+    .product-grid, .grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* Hiện 2 cột thay vì 3-4 cột */
+        gap: 10px !important;
+        padding: 10px;
+    }
+
+    /* 3. Tối ưu Modal (Bảng thông báo) */
+    .modal-content {
+        width: 95% !important; /* Cho bảng to ra gần hết màn hình điện thoại */
+        margin: 20% auto !important;
+        padding: 15px !important;
+    }
+
+    /* 4. Chỉnh lại Modal Vòng Quay (Vốn rất to) */
+    #modalVongQuay .modal-content {
+        flex-direction: column !important; /* Chuyển từ hàng ngang sang hàng dọc */
+        height: auto !important;
+    }
+    
+    #modalVongQuay .modal-content > div {
+        border-right: none !important;
+        border-bottom: 1px solid #333;
+        width: 100% !important;
+    }
+
+    /* 5. Menu điều hướng */
+    .nav-center {
+        display: none; /* Ẩn bớt menu phụ nếu quá chật */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Cho điện thoại màn hình nhỏ hơn nữa */
+    .product-grid, .grid {
+        grid-template-columns: 1fr !important; /* Hiện 1 cột duy nhất */
+    }
+}
